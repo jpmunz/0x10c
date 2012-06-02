@@ -1,0 +1,11 @@
+This is a machine simulator and assembler for Notch's DCPU-16 Specificaation written in Python.
+
+The implementation is based on version 1.1 of the specification.
+
+    python run_assembler.py FILE
+
+run_assembler will take a series of DCPU assembler instructions and output the equivalent 16-bit machine code instructions
+
+    python run_simulator.py FILE
+
+run_simulator will take a set of machine code instructions and exit with a memory dump of the state after execution.
