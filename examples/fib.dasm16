@@ -1,0 +1,19 @@
+            SET I, 0x1
+            SET [0x1000], 0x0       ;fib0 = 0
+            SET [0x1000+I], 0x1     ;fib1 = 1
+
+:nextfib    ADD I, 0x1
+
+            SET A, I
+            SET B, I
+
+            SUB A, 0x1
+            SUB B, 0x2
+
+            SET X, [0x1000+A]
+            ADD X, [0x1000+B]
+
+            SET [0x1000+I], X
+
+            IFG 0xa, I             ;stop after n=10
+                SET PC, nextfib
